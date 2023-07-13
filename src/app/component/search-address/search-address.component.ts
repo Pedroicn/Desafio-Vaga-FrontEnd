@@ -22,19 +22,44 @@ export class SearchAddressComponent {
     this.IBGE = '';
   }
 
-  getData() {
-    if (this.cep === '') {
-      alert('digite um número de cep');
-      return;
-    } else {
-      console.log(typeof this.cep);
-      return this.addressService.fetchData(this.cep).subscribe((response) => {
-        this.street = response.logradouro;
-        this.neighborhood = response.bairro;
-        this.city = response.localidade;
-        this.state = response.uf;
-        this.IBGE = response.ibge;
-      });
+  getData(): void {
+    this.addressService.fetchData(this.cep).subscribe((response) => {
+      this.street = response.logradouro;
+      this.neighborhood = response.bairro;
+      this.city = response.localidade;
+      this.state = response.uf;
+      this.IBGE = response.ibge;
+    });
+  }
+  isButtonDisabled() {
+    if (
+      this.street === '' ||
+      this.neighborhood === '' ||
+      this.city === '' ||
+      this.state === '' ||
+      this.IBGE === ''
+    ) {
+      return true;
     }
+    return false;
+  }
+
+  onsubmit(): void {
+    alert('Enviado com sucesso');
+    this.cep = '';
+    this.street = '';
+    this.neighborhood = '';
+    this.city = '';
+    this.state = '';
+    this.IBGE = '';
+  }
+
+  cleanFields() {
+    this.cep = '';
+    this.street = '';
+    this.neighborhood = '';
+    this.city = '';
+    this.state = '';
+    this.IBGE = '';
   }
 }

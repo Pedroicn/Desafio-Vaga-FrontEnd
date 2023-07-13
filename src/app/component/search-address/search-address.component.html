@@ -10,6 +10,7 @@
         [(ngModel)]="cep"
         name="cep"
         (change)="getData()"
+        (blur)="getData()"
         maxlength="8"
         required
       />
@@ -35,8 +36,10 @@
       <input type="text" value="{{ IBGE }}" disabled />
     </div>
     <div>
-      <button>submit</button>
-      <button>clean</button>
+      <button [disabled]="isButtonDisabled()" (click)="onsubmit()">
+        Enviar
+      </button>
+      <button (click)="cleanFields()">Limpar</button>
     </div>
   </form>
 </main>
