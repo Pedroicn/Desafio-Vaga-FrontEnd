@@ -11,27 +11,32 @@
         name="cep"
         (change)="getData()"
         maxlength="8"
+        required
       />
     </div>
     <div>
       <label for="">Rua:</label>
-      <input type="text" />
+      <input type="text" value="{{ street }}" disabled />
     </div>
     <div>
       <label for="">Bairro:</label>
-      <input type="text" />
+      <input type="text" value="{{ neighborhood }}" disabled />
     </div>
     <div>
       <label for="">Cidade:</label>
-      <input type="text" />
+      <input type="text" value="{{ city }}" disabled />
     </div>
     <div>
       <label for="">Estado:</label>
-      <input type="text" />
+      <input type="text" value="{{ state }}" disabled />
     </div>
     <div>
       <label for="">IBGE:</label>
-      <input type="text" />
+      <input type="text" value="{{ IBGE }}" disabled />
+    </div>
+    <div>
+      <button>submit</button>
+      <button>clean</button>
     </div>
   </form>
 </main>

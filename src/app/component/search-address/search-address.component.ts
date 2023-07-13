@@ -6,25 +6,34 @@ import { AddressService } from '../../services/address.service';
   templateUrl: './search-address.component.html',
   styleUrls: ['./search-address.component.scss'],
 })
-export class SearchAddressComponent implements OnInit {
+export class SearchAddressComponent {
   cep: string = '';
-  rua: string;
-  constructor(private addressService: AddressService) {
-    this.rua = '';
-  }
+  street: string;
+  neighborhood: string;
+  city: string;
+  state: string;
+  IBGE: string;
 
-  ngOnInit() {
-    this.getData();
+  constructor(private addressService: AddressService) {
+    this.street = '';
+    this.neighborhood = '';
+    this.city = '';
+    this.state = '';
+    this.IBGE = '';
   }
 
   getData() {
     if (this.cep === '') {
-      return '';
+      alert('digite um número de cep');
+      return;
     } else {
       console.log(typeof this.cep);
       return this.addressService.fetchData(this.cep).subscribe((response) => {
-        console.log(response);
-        this.rua = response.logradouro;
+        this.street = response.logradouro;
+        this.neighborhood = response.bairro;
+        this.city = response.localidade;
+        this.state = response.uf;
+        this.IBGE = response.ibge;
       });
     }
   }
