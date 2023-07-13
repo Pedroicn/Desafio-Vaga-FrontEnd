@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AddressService } from '../../services/address.service';
 
 @Component({
@@ -31,6 +31,7 @@ export class SearchAddressComponent {
       this.IBGE = response.ibge;
     });
   }
+
   isButtonDisabled() {
     if (
       this.street === '' ||

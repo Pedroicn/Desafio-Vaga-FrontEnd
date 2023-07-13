@@ -1,45 +1,47 @@
 <main>
-  <h2>Informe o CEP</h2>
-  <p>Digite o CEP e ao sair o endereço será completado.</p>
-  <p>Pode utilizar a tecla TAB após digitar o CEP.</p>
-  <form action="">
-    <div>
-      <label for="">Cep:</label>
-      <input
-        type="text"
-        [(ngModel)]="cep"
-        name="cep"
-        (change)="getData()"
-        (blur)="getData()"
-        maxlength="8"
-        required
-      />
-    </div>
-    <div>
-      <label for="">Rua:</label>
-      <input type="text" value="{{ street }}" disabled />
-    </div>
-    <div>
-      <label for="">Bairro:</label>
-      <input type="text" value="{{ neighborhood }}" disabled />
-    </div>
-    <div>
-      <label for="">Cidade:</label>
-      <input type="text" value="{{ city }}" disabled />
-    </div>
-    <div>
-      <label for="">Estado:</label>
-      <input type="text" value="{{ state }}" disabled />
-    </div>
-    <div>
-      <label for="">IBGE:</label>
-      <input type="text" value="{{ IBGE }}" disabled />
-    </div>
+  <section>
+    <h2>Informe o CEP</h2>
+    <p>Digite o CEP e ao sair o endereço será completado.</p>
+    <p>Pode utilizar a tecla TAB após digitar o CEP.</p>
+    <form action="">
+      <div>
+        <label for="">Cep:</label>
+        <input
+          type="text"
+          [(ngModel)]="cep"
+          name="cep"
+          (change)="getData()"
+          (blur)="getData()"
+          maxlength="8"
+          required
+        />
+      </div>
+      <div>
+        <label for="">Rua:</label>
+        <input type="text" value="{{ street }}" disabled />
+      </div>
+      <div>
+        <label for="">Bairro:</label>
+        <input type="text" value="{{ neighborhood }}" disabled />
+      </div>
+      <div>
+        <label for="">Cidade:</label>
+        <input type="text" value="{{ city }}" disabled />
+      </div>
+      <div>
+        <label for="">Estado:</label>
+        <input type="text" value="{{ state }}" disabled />
+      </div>
+      <div>
+        <label for="">IBGE:</label>
+        <input type="text" value="{{ IBGE }}" disabled />
+      </div>
+    </form>
     <div>
       <button [disabled]="isButtonDisabled()" (click)="onsubmit()">
         Enviar
       </button>
       <button (click)="cleanFields()">Limpar</button>
     </div>
-  </form>
+  </section>
 </main>
