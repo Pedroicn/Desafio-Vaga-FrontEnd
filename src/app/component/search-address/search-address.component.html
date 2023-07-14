@@ -3,6 +3,7 @@
     <h2>Informe o CEP</h2>
     <p>Digite o CEP e ao sair o endereço será completado.</p>
     <p>Pode utilizar a tecla TAB após digitar o CEP.</p>
+    <p class="alert" *ngIf="isCepValid">{{ error }}</p>
     <form action="">
       <div>
         <label for="">Cep:</label>
@@ -12,6 +13,7 @@
           name="cep"
           (change)="getData()"
           (blur)="getData()"
+          (input)="cepValidation()"
           maxlength="8"
           required
         />

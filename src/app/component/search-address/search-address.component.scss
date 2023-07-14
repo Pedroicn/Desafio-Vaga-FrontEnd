@@ -13,6 +13,10 @@ main {
     box-shadow: var(--box-shadow);
     padding: 30px;
 
+    .alert {
+      color: var(--color-alert);
+    }
+
     form {
       display: flex;
       flex-direction: column;
