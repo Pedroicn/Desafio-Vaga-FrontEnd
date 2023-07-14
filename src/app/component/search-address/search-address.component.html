@@ -1,8 +1,10 @@
 <main>
   <section>
-    <h2>Informe o CEP</h2>
-    <p>Digite o CEP e ao sair o endereço será completado.</p>
-    <p>Pode utilizar a tecla TAB após digitar o CEP.</p>
+    <div class="info">
+      <h2>Informe o CEP</h2>
+      <i>Digite somente números e ao sair o endereço será completado.</i>
+      <i>Pode utilizar a tecla TAB após digitar o CEP.</i>
+    </div>
     <p class="alert" *ngIf="isCepValid">{{ error }}</p>
     <form action="">
       <div>
@@ -39,7 +41,7 @@
         <input type="text" value="{{ IBGE }}" disabled />
       </div>
     </form>
-    <div>
+    <div class="buttons">
       <button [disabled]="isButtonDisabled()" (click)="onsubmit()">
         Enviar
       </button>

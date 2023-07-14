@@ -12,6 +12,19 @@ main {
     gap: 10px;
     box-shadow: var(--box-shadow);
     padding: 30px;
+    border-radius: 10px;
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+    }
 
     .alert {
       color: var(--color-alert);
@@ -21,16 +34,25 @@ main {
       display: flex;
       flex-direction: column;
       gap: 10px;
+      align-items: center;
 
       div {
         display: flex;
         justify-content: space-between;
+        width: 70%;
       }
 
       input {
         font-weight: 300;
         border-radius: 5px;
+        border: 2px solid var(--color-primary);
       }
+    }
+
+    .buttons {
+      display: flex;
+      margin-top: 1.5rem;
+      justify-content: space-around;
     }
   }
 }
